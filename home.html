@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courses Available</title>
+</head>
+<body>
+    <h1>Available Courses</h1>
+    <ul>
+        {% for course in courses %}
+            <li>{{ course.name }} - Credits: {{ course.credits }}</li>
+        {% empty %}
+            <li>No courses available.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'register' %}">Register as Student</a>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Confirmation</title>
+</head>
+<body>
+    <h1>Thank you, {{ student.name }}!</h1>
+    <p>You have registered for these courses:</p>
+    <ul>
+        {% for reg in registrations %}
+            <li>{{ reg.course.name }} ({{ reg.course.credits }} credits)</li>
+        {% empty %}
+            <li>You have not registered for any courses yet.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>
